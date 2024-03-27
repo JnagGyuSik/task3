@@ -9,5 +9,5 @@
     <string name="bt1">로그인</string>
     <string name="bt2">회원가입</string>
     <string name="bt3">종료</string>
-
+    <string name="back">뒤로가기</string>
 </resources>

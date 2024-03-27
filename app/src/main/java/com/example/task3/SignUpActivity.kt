@@ -25,6 +25,7 @@ class SignUpActivity : AppCompatActivity(){
         val memberId = findViewById<EditText>(R.id.etId2)
         val memberPw = findViewById<EditText>(R.id.etPw2)
         val memberBt = findViewById<Button>(R.id.btMembership2)
+        val backBt = findViewById<Button>(R.id.signUpBack)
 
         //회원가입 버튼
         memberBt.setOnClickListener {
@@ -41,8 +42,8 @@ class SignUpActivity : AppCompatActivity(){
                         putExtra("SingIn_ID", memberId.text.toString())
                         putExtra("SingIn_PW", memberPw.text.toString())
                     }
-                    Log.d("ID확인","이름 : $nameList  아이디 : $idList  비밀번호 : $pwList")
                     setResult(Activity.RESULT_OK, intent)
+                    Log.d("ID확인","이름 : $nameList  아이디 : $idList  비밀번호 : $pwList")
 
                     //액티비티 강제 종료
                     if(!isFinishing) {
@@ -52,6 +53,11 @@ class SignUpActivity : AppCompatActivity(){
                     Toast.makeText(this,"중복된 아이디 입니다", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+
+        //뒤로가기 버튼
+        backBt.setOnClickListener {
+            finish()
         }
     }
 

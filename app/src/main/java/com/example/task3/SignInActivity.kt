@@ -16,9 +16,9 @@ class SignInActivity : AppCompatActivity() {
     lateinit var etId:EditText
     lateinit var etPw:EditText
 
-    //데이터 가져오기 Callback(액티비티 시작 시 실행)
+    //데이터 가져오기 CallBack(액티비티 시작 시 실행)
     var resultString = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
-        if (result.resultCode == Activity.RESULT_OK){
+        if (result.resultCode == Activity.RESULT_OK){ //SignUpActivity의 setResult에 넣은 데이터와 Activity.RESULT_OK 비교
             val signInId = result.data?.getStringExtra("SingIn_ID")
             val signInPw = result.data?.getStringExtra("SingIn_PW")
             Log.d("ID확인","아이디 : $signInId  비밀번호 : $signInPw")
